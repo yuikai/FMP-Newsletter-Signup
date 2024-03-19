@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles.css"/>
+</head>
+<body>
+  <div id="app">
+    <!-- Sign-up form start -->
+    <div class="form-container" v-show="!state">
+      <div class="form">
+        <h1>{{ header }}</h1>
+        <p>{{ desc }}</p>
+        
+        <div class="benefits">
+          <div v-for="benefit in benefits">
+            <img src="./assets/images/icon-list.svg" alt="Benefit"/>
+            <p>{{ benefit }}</p>
+          </div>
+        </div>
+
+        <div class="form-label">
+          <label for="email">Email address</label>
+          <label id="label-error"
+            v-show="!valid">
+            Valid email required
+          </label>
+        </div>
+        <input :id="( valid ? 'email' : 'email-error' )"
+          v-model.trim="email"
+          placeholder="email@company.com"/>
+        <input id="submit"
+          type="submit"
+          @click="validateEmail"
+          value="Subscribe to monthly newsletter"/>
+      </div>
+
+      <picture>
+        <source media="(max-width: 799px)" srcset="./assets/images/illustration-sign-up-mobile.svg"/>
+
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="Illustration"/>
+      </picture>
+    </div>
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+    <div class="success-container" v-show="state">
+      <img src="./assets/images/icon-success.svg" alt="Success"/>
+
+      <h1>Thanks for subscribing!</h1>
+      <p>A confirmation email has been sent to {{ email }}. Please open it and click the button inside to confirm your subscription.</p>
+
+      <button @click="toggleState">Dismiss message</button>
+    </div>
+    <!-- Success message end -->
+    
+    <br/>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">uKai</a>.
+    </div>
+  </div>
+    
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('./assets/fonts/Roboto-Bold.ttf');
+}
+
+@media screen and (max-width: 799px){
+  .form-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 30px;
+    flex-direction: column-reverse;
+  }
+
+  .success-container {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .form-container {
+    width: 840px;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 20px;
+  }
+
+  .success-container {
+    width: 30%;
+    margin: 50px auto;
+    border-radius: 30px;
+  }
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0px;
+  background-color: hsl(235, 18%, 26%);
+
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: hsl(234, 29%, 20%);
+}
+
+#app {
+  min-height: 100%;
+}
+
+/* Sign-up form start */
+.form-container {
+  background-color: white;
+  display: flex;
+}
+
+.form {
+  padding: 0px 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.form h1{
+  margin-top: 0px;
+  font-family: 'Roboto Bold';
+  font-size: 58px;
+}
+
+.benefits {
+  margin: 30px 0px;
+}
+.benefits div {
+  display: flex;
+}
+.benefits p {
+  margin: 10px 0px 10px 20px; 
+}
+
+.form-label {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+#label-error {
+  padding-right: 40px;
+  color: hsl(4, 100%, 67%);
+}
+
+.form input {
+  margin: 10px 0px;
+  border-radius: 5px;
+}
+#email {
+  width: 83.8%;
+  height: 40px;
+  padding-left: 20px;
+  border: 2px solid hsl(231, 7%, 60%);
+  color: hsl(234, 29%, 20%);
+}
+#email-error {
+  width: 83.8%;
+  height: 40px;
+  padding-left: 20px;
+  border: 2px solid hsl(4, 100%, 67%);
+  background-color: hsl(4, 100%, 67%, 10%);
+  color: hsl(4, 100%, 67%);
+}
+#email-error:focus {
+  background-color: transparent;
+  color: hsl(234, 29%, 20%);
+}
+#submit {
+  width: 90%;
+  height: 45px;
+  border-width: 0px;
+  background-color: hsl(234, 29%, 20%);
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: white;
+}
+#submit:hover {
+  width: 90%;
+  height: 45px;
+  border-width: 0px;
+  background-image: linear-gradient(to right, #FF527B, #FF6A3D);
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: white;
+  box-shadow: 0px 10px 20px 10px hsl(350, 100%, 88%, 50%);
+}
+/* Sign-up form end */
+
+/* Success message start */
+.success-container {
+  padding: 30px;
+  background-color: white;
+}
+.success-container img {
+  margin-top: 15px;
+}
+.success-container h1 {
+  font-family: 'Roboto Bold';
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+
+.success-container button {
+  width: 100%;
+  height: 45px;
+  margin: 10px 0px;
+  border-width: 0px;
+  border-radius: 10px;
+  background-color: hsl(234, 29%, 20%);
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: white;
+}
+.success-container button:hover {
+  width: 100%;
+  height: 45px;
+  margin: 10px 0px;
+  border-width: 0px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #FF527B, #FF6A3D);
+  font-family: 'Roboto';
+  font-weight: 600;
+  color: white;
+  box-shadow: 0px 10px 20px 10px hsl(350, 100%, 88%, 50%);
+}
+
+/* Success message end */
+
+.attribution { font-size: 11px; text-align: center; color: white; }
+.attribution a { color: hsl(228, 45%, 44%); }
